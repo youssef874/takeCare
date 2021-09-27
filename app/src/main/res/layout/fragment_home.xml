@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.HomeFragment">
+
+
+        <ImageView
+            android:id="@+id/hospital_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/hospital"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/description_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/text_padding"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/text_padding"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/description_hospital_string"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hospital_image_view" />
+
+        <LinearLayout
+            android:id="@+id/location_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/text_padding"
+            android:layout_marginEnd="@dimen/text_padding"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/phone_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/location_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/location_string"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#8C9EFF" />
+
+            <ImageView
+                android:id="@+id/location_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitStart"
+                android:src="@drawable/lovation" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phone_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/text_padding"
+            android:layout_marginEnd="@dimen/text_padding"
+            android:layout_marginBottom="@dimen/pass_bottom_nav_dim"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/phone_number_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/phone_number_string"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#8C9EFF" />
+
+            <TextView
+                android:id="@+id/phone_number_value_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/phone_number_value_string"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#8C9EFF" />
+
+            <ImageView
+                android:id="@+id/call_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitStart"
+                android:src="@drawable/call" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

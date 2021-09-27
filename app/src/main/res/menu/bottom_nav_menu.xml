@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_baseline_home"
+        android:title="@string/home_string" />
+    <item
+        android:id="@+id/doctorsFragment"
+        android:icon="@drawable/ic_baseline_medical_services"
+        android:title="@string/doctors_string" />
+    <item
+        android:id="@+id/myAppointmentFragment"
+        android:icon="@drawable/ic_baseline_schedule"
+        android:title="@string/my_appointment_string" />
+</menu>

@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">TakeCare</string>
+    <string name="home_string">Home</string>
+    <string name="doctors_string">Doctors</string>
+    <string name="my_appointment_string">My appointment</string>
+    <string name="description_hospital_string">This multi_speciality hospital with the
+    best doctors in their field and with more experience to guarantee the best services
+    to our patient</string>
+    <string name="location_string">Location</string>
+    <string name="phone_number_string">Phone number: </string>
+    <string name="phone_number_value_string">25836911  </string>
+    <string name="permission_error">You need to give permission to make a phone
+    call</string>
+    <string name="doctor_name">Name: %s</string>
+    <string name="age_string">Age: %d</string>
+    <string name="speciality_string">speciality: %s</string>
+    <string name="request_appointment">Appointment</string>
+    <string name="search_string">Search</string>
+    <string name="dialog_title">Require an authentication</string>
+    <string name="dialog_body">
+        The hospital need to know hou your are to
+        give you an appointment so you need to be authenticated
+    </string>
+    <string name="positive_dialog">signIn</string>
+    <string name="negative_dialog">Cancel</string>
+    <string name="login">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up_string">SignUp</string>
+    <string name="sign_in_string">SignIn</string>
+    <string name="create_account_string">Create account</string>
+    <string name="name_string"> Name</string>
+    <string name="nidc_string">National id card</string>
+    <string name="tel_string">Phone number</string>
+    <string name="address_string">Address</string>
+    <string name="cancel_string">Cancel</string>
+    <string name="empty_text_field_error_message">Please fill the correspond field</string>
+    <string name="wrong_input_message">Wrong input</string>
+    <string name="log_out_string">Log out</string>
+    <string name="profile_string">Profile</string>
+    <string name="id_string">National ID card: %s</string>
+    <string name="tel_with_args_string">Phone number: %d</string>
+    <string name="email_with_args">Email: %s</string>
+    <string name="addr_with_args">Address: %s</string>
+    <string name="request_registration">Request registration</string>
+    <string name="done_string">Done</string>
+    <string name="back_to_doc_string">To doctors </string>
+    <string name="message_body">Good day to you\n
+    My name %1$s with national ID card %2$s i request
+    an appointment to doctor %3$s of %4$s speciality.\n
+    For more information you can contact me at phone number %5$d
+    or this email or send a letter to %6$s.\n\n
+    Thank you</string>
+    <string name="empty_forum">Please fill the empty field</string>
+    <string name="request_sent_string">Your request has been sent</string>
+    <string name="email_dialog">This action will allow you to send an email to
+    the hospital for registration and appointment request so you need until
+    we add you to our system to be able to authenticate</string>
+    <string name="email_dialog_positive">Send</string>
+    <string name="email_sent_message">your email has been sent press to doctor button
+    to bac to doctors list</string>
+    <string name="authenticated_message">Since you authenticated you can request an
+    appointment</string>
+    <string name="no_appointment_message">No appointment , please go request one.\n If you did already please wait until we specify it for you</string>
+    <string name="appointment_date_string">Appointment at :  %s</string>
+    <string name="appointment_doctor">With : %s</string>
+    <string name="appointment_speciality_string">Specialized in : %s</string>
+    <string name="edit_string">Edit</string>
+    <string name="change_appointment_string">Change appointment date</string>
+    <string name="change_appointment_body">Your going to send a request to change this
+    appointment date</string>
+    <string name="change_appointment_email_body">
+        Good day to you\n
+        My name %1$s im patient registered in your hospital with is %2$s
+        i request to change the appointment of id %3$s date\n\n
+        thanks for your understanding
+    </string>
+
+    <string name="appointment_notification_id" translatable="false">appointment_channel</string>
+    <string name="notification_channel_message">You have an appointment</string>
+    <string name="message_subscribe_failed">Failed to subscribe to topic</string>
+    <string name="message_subscribed">Subscribed to topic</string>
+</resources>
