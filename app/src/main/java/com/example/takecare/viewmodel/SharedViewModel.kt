@@ -1,7 +1,12 @@
 package com.example.takecare.viewmodel
 
+import android.app.AlarmManager
 import android.app.Application
 import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import androidx.core.app.AlarmManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.*
 import com.example.takecare.R
@@ -10,6 +15,7 @@ import com.example.takecare.cancelNotifications
 import com.example.takecare.model.Appointment
 import com.example.takecare.model.Doctor
 import com.example.takecare.model.Patient
+import com.example.takecare.receiver.AlarmReceiver
 import com.example.takecare.repository.Repository
 import com.example.takecare.sendNotification
 import com.google.firebase.Timestamp
@@ -26,6 +32,8 @@ import kotlin.collections.ArrayList
 class SharedViewModel(private val app: Application ):AndroidViewModel(app) {
 
     private val db = Firebase.firestore
+
+    private val REQUEST_CODE = 0
 
     private val doctorSnapshotData = Repository(db.collection("doctors"))
             as LiveData<QuerySnapshot?>
@@ -59,6 +67,21 @@ class SharedViewModel(private val app: Application ):AndroidViewModel(app) {
     private var _patientAppointment = MutableLiveData<List<Appointment>?>()
     val patientAppointment: LiveData<List<Appointment>?>
         get() = _patientAppointment
+
+    private lateinit var notifyPendingIntent: PendingIntent
+
+    private val alarmManager = app.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+
+    private val notifyIntent = Intent(app, AlarmReceiver::class.java)
+
+    init {
+        notifyPendingIntent = PendingIntent.getBroadcast(
+            getApplication(),
+            REQUEST_CODE,
+            notifyIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+    }
 
     fun getTheSearchedResult(search:String){
         _doctors.value = getResultByName(search)
@@ -131,10 +154,10 @@ class SharedViewModel(private val app: Application ):AndroidViewModel(app) {
         val milliseconds = timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000
         val desiredTime:Long = currentMillisecond+period
            if (milliseconds == desiredTime)
-               notification()
+               notification(desiredTime)
     }
 
-    private fun notification() {
+    private fun notification(desiredTime: Long) {
         val notificationManager = ContextCompat.getSystemService(
             app,
             NotificationManager::class.java
@@ -143,6 +166,13 @@ class SharedViewModel(private val app: Application ):AndroidViewModel(app) {
         notificationManager.cancelNotifications()
         notificationManager.sendNotification(app.
         getString(R.string.notification_channel_message), app)
+        AlarmManagerCompat.setExactAndAllowWhileIdle(
+            alarmManager,
+            AlarmManager.ELAPSED_REALTIME_WAKEUP,
+            desiredTime,
+            notifyPendingIntent
+        )
+
 
     }
 }
