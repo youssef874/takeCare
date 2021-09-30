@@ -32,6 +32,7 @@ class MyAppointmentFragment : Fragment() {
     private lateinit var patient: Patient
 
     private var _binding: FragmentMyAppointmentBinding? = null
+    //This attribute to determine the profile and logOut menu visibility
     private var isVisibleMenu = true
     private val period = 1800000L
     private val TOPIC = "appointment"

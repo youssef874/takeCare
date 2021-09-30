@@ -27,7 +27,10 @@ fun TextInputLayout.setError(isWrong: Boolean, msg: String) {
 private val NOTIFICATION_ID = 0
 
 /**
- * This function to create and send the notification
+ * This function to create and send the notification and allow other application
+ * to access this app
+ * @param message: the notification message
+ * @param applicationContext: the context responsible of making the notification
  */
 fun NotificationManager.sendNotification(message: String, applicationContext: Context){
 
@@ -54,6 +57,9 @@ fun NotificationManager.sendNotification(message: String, applicationContext: Co
     notify(NOTIFICATION_ID,builder.build())
 }
 
+/**
+ * This extension function cancel all notification so they don't stack at each other
+ */
 fun NotificationManager.cancelNotifications() {
     cancelAll()
 }
