@@ -15,13 +15,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
     private lateinit var bottomNav: BottomNavigationView
-    //val language = (application as TakeCareApp).language
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Log.i(TAG,"$language")
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         // Instantiate the navController using the NavHostFragment
@@ -33,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         bottomNav?.setupWithNavController(navController)
 
         //Change the up button behavior to considerate the HomeFragment, DoctorsFragment
-        //and yAppointmentFragment  as top level destination
+        //and AppointmentFragment  as top level destination
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.homeFragment, R.id.doctorsFragment, R.id.myAppointmentFragment

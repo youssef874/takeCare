@@ -23,9 +23,9 @@ import java.util.*
 
 /**
  * Put the planes list to the recycle vie adapter using BindingAdapter of data biding
- * and call it in Home_fragment.xml in [RecyclerView] tag in app:listData
+ * and call it in Doctor_fragment.xml in [RecyclerView] tag in app:listData
  * @param recyclerView: will get from xml
- * @param planes: the plane list will be in the xml as variable
+ * @param doctors: the doctor list will be in the xml as variable
  */
 @BindingAdapter("listDoctorData")
 fun binRecycleView(recyclerView: RecyclerView, doctors:List<Doctor>?){
@@ -35,7 +35,7 @@ fun binRecycleView(recyclerView: RecyclerView, doctors:List<Doctor>?){
 
 /**
  * Toad the img from the url using coil third party library
- * It will be used in home_lis_item.xml in [ImageView] tag in app:imageUrl
+ * It will be used in doctor_list_item.xml in [ImageView] tag in app:imageUrl
  * @param imageView: will get from xml
  * @param imageUrl: the url to be loaded
  */
